@@ -6,7 +6,8 @@ environment {
     stages {
         stage('Build') {
             steps {
-                bat 'archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true'
+                bat 
+                   archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
                    
             }
                   }
