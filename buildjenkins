@@ -4,13 +4,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                cmd_exec("archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true")
+                bat cmd archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
                    
             }
                   }
     
     }
 }
-  def cmd_exec(command) {
-    return bat(returnStdout: true, script: "${command}").trim()
-}
+  
